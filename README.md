@@ -1,95 +1,97 @@
+
 # 🤖 Chatbot com n8n + Google Sheets + LLM (Groq)
 
-Este projeto é um chatbot criado no [n8n](https://n8n.io/) com foco em IA aplicada, automação e integração com ferramentas externas.
-
-## 💡 O que ele faz
-
-- Recebe mensagens via **Chat Trigger**
-- Salva o conteúdo da conversa em uma planilha do **Google Sheets**
-- Usa um **Agente de IA com memória** via **LangChain**
-- Conecta a um modelo da **Groq** (LLaMA 3.1 8B)
-- Acessa **Wikipedia** e **Calculadora**
-- Responde de forma **humanizada**, com **emojis**, e até faz piadinhas 😄
+Este projeto é um chatbot inteligente criado com **n8n**, focado em IA aplicada, automações e integração low-code com ferramentas externas.  
+Ele utiliza modelos LLM da Groq com memória de conversação via LangChain — tudo isso rodando localmente com Docker.
 
 ---
 
-## 🧠 Visão geral do fluxo
+## 💡 Funcionalidades
+
+- 🟢 Recebe mensagens via **Chat Trigger**  
+- 📊 Salva perguntas e respostas no **Google Sheets**  
+- 🧠 Usa um **Agente de IA com memória** via **LangChain**  
+- ⚡ Integra com o modelo **LLaMA 3.1 8B (Groq API)**  
+- 📚 Consulta **Wikipedia** e realiza cálculos com **Calculator Tool**  
+- 😄 Responde de forma **humanizada**, com emojis e tom descontraído  
+
+---
+
+## 🧠 Visão Geral do Fluxo
 
 ### 🔁 Fluxo no n8n:
 
 <img src="images/flow.png" alt="Fluxo no n8n" width="700"/>
 
-### 💬 Chat em ação:
+### 💬 Chatbot em ação:
 
 <img src="images/chatbot-demo.png" alt="Chatbot funcionando" width="700"/>
 
-### 🧪 Teste local do chatbot:
-
-👉 [http://localhost:5678/webhook/be567f91-bae3-4ba9-bade-6555ca811c23/chat](http://localhost:5678/webhook/be567f91-bae3-4ba9-bade-6555ca811c23/chat)
-
 ---
 
-## 🐳 Como rodar com Docker
+## 🐳 Rodando localmente com Docker
 
-Este projeto já vem com um `docker-compose.yml` para facilitar o uso local com Docker.
+Este projeto já vem pronto pra rodar via `docker-compose`.
 
-### ⚙️ Passos:
+### ⚙️ Passo a passo
 
 1. Clone o repositório:
 
    ```bash
    git clone https://github.com/seu-usuario/seu-repo.git
    cd seu-repo
+   ```
 
+2. Suba o n8n com Docker:
 
-Suba o n8n com Docker:
+   ```bash
+   docker-compose up -d
+   ```
 
-bash
-Copiar
-Editar
-docker-compose up -d
-Acesse no navegador:
+3. Acesse o editor do n8n:
 
-👉 http://localhost:5678
+   👉 [http://localhost:5678](http://localhost:5678)
 
-Importe o arquivo workflow.json no editor do n8n
+4. Importe o fluxo `workflow.json`
 
-Configure as credenciais:
+5. Configure as credenciais:
 
-Conta do Google Sheets
+   - Conta do Google Sheets  
+   - API Key da Groq  
 
-Conta Groq (API Key)
+6. Teste o chatbot:
 
-Pronto! Agora é só testar o chatbot no link de teste e ver ele salvando mensagens na planilha em tempo real 📊
+   👉 [http://localhost:5678/webhook/seu-id/chat](http://localhost:5678/webhook/seu-id/chat)
 
-📦 Tecnologias e Ferramentas
-n8n (editor de fluxos)
+---
 
-LangChain (IA com memória)
+## 📦 Tecnologias e Ferramentas
 
-Groq API (modelo LLaMA 3.1 8B Instant)
+- **n8n** — Automação de workflows  
+- **LangChain** — Memória e IA aplicada  
+- **Groq API** — LLM com LLaMA 3.1 8B  
+- **Google Sheets API** — Armazenamento dos dados  
+- Wikipedia Tool & Calculator Tool  
+- Docker & Docker Compose  
 
-Google Sheets API
+---
 
-Wikipedia Tool & Calculator Tool
+## 📁 Estrutura do Projeto
 
-Docker + docker-compose
-
-📁 Estrutura do projeto
-arduino
-Copiar
-Editar
+```
 chatbot-n8n-gsheets/
-├── images/
+├── images/                  # Prints do fluxo e do chat
 │   ├── flow.png
 │   └── chatbot-demo.png
-├── n8n_data/                # volume persistente do n8n
-├── workflow.json            # exportação do fluxo
-├── docker-compose.yml       # para subir o n8n localmente
+├── n8n_data/                # Volume persistente do n8n
+├── workflow.json            # Exportação do fluxo
+├── docker-compose.yml       # Arquivo Docker
 └── README.md
+```
 
+---
 
-✨ Feito por
-Desenvolvido por Karol 💜
-Focada em Inteligência Artificial aplicada, automações com n8n e integração entre código e ferramentas no/low-code.
+## ✨ Feito por
 
+Desenvolvido por **Karol 💜**  
+AI Developer focada em Inteligência Artificial aplicada, automações com n8n e integração entre código + no/low-code.
