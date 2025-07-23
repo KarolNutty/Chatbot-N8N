@@ -21,11 +21,11 @@ Ele utiliza modelos LLM da Groq com memória de conversação via LangChain — 
 
 ### 🔁 Fluxo no n8n:
 
-<img src="images/flow.png" alt="Fluxo no n8n" width="700"/>
+<img src="images/flow.png.png" alt="Fluxo no n8n" width="700"/>
 
 ### 💬 Chatbot em ação:
 
-<img src="images/chatbot-demo.png" alt="Chatbot funcionando" width="700"/>
+<img src="images/chatbot-demo.png.png" alt="Chatbot funcionando" width="700"/>
 
 ---
 
